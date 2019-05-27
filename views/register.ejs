@@ -1,0 +1,41 @@
+
+
+
+<% include navbar.ejs %>
+<div class="container mt-5">
+    <form action="/users/register" method="post">
+        <div class="form-group">
+            <h1 class="center">Register</h1>
+            <% if(typeof errors != 'undefined') { %>
+              <% errors.forEach(function(error) { %>
+                    <%= error.msg %>
+                  <% }); %>
+                  <% } %> 
+            <div class="form-group">
+                    <label for="Employeename">Employee Name</label>
+                    <input type="text" class="form-control"  name="username" placeholder="Employee Name" value="<% typeof username !='undefined' ? username : '' %>">
+                  </div>
+                  <div class="form-group">
+                        <label for="Employeesurname">Employee Surname</label>
+                        <input type="text" class="form-control"  name="lastName" placeholder="Employee Surname" value="<% typeof lastName !='undefined' ? lastName : '' %>">
+                      </div>
+                      <div class="form-group">
+                        <label for="email">Employee email</label>
+                        <input type="email" class="form-control"  name="email" placeholder="Employee email" value="<% typeof email !='undefined' ? email : '' %>">
+                      </div>
+                  <div class="form-group">
+                    <label>ID No:</label>
+                    <input type="text" class="form-control" name="idno" placeholder="Enter ID Number" value="<% typeof idno !='undefined' ? idno : '' %>">
+                  </div>
+                  <div class="form-group">
+                        <label>Confirm ID No:</label>
+                        <input type="text" class="form-control" name="Ridno" placeholder="Confirm ID Number" value="<% typeof Ridno !='undefined' ? Ridno : '' %>">
+                      </div>
+                  <button type="submit" class="btn btn-primary btn-block">Create Employee</button>
+
+        </div>
+</div>
+    </form>
+</div>
+    </body>
+</html>
